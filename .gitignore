@@ -1,0 +1,19 @@
+# Quartus compilation output folders
+Processador_MIPS/db/
+Processador_MIPS/incremental_db/
+Processador_MIPS/output_files/
+Processador_MIPS/simulation/
+
+# Backups and temporary files
+Processador_MIPS/*.bak
+Processador_MIPS/*.rpt
+Processador_MIPS/*.qws
+Processador_MIPS/*.qar
+Processador_MIPS/*.archive.rpt
+
+# Restored project folders
+Processador_MIPS/*_restored/
+
+# Miscellaneous
+Processador_MIPS/*.tmp
+Processador_MIPS/*.temp
