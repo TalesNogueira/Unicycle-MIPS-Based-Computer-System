@@ -1,11 +1,11 @@
 // Quartus Prime Verilog Template
-// Single port RAM with single read/write address 
+// Single Port RAM with single read/write address 
 
-module Memoria_Dados 
+module Memory_Data
 #(parameter DATA_WIDTH=32, parameter ADDR_WIDTH=32)
 (
-	input [(DATA_WIDTH-1):0] data,
 	input [(ADDR_WIDTH-1):0] addr,
+	input [(DATA_WIDTH-1):0] data,
 	input we, clk,
 	output [(DATA_WIDTH-1):0] q
 );

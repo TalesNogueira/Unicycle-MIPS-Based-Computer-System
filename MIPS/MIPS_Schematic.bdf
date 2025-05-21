@@ -1,0 +1,1032 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "graphic" (version "1.4"))
+(pin
+	(input)
+	(rect 528 512 704 528)
+	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
+	(text "clk" (rect 9 0 23 12)(font "Arial" ))
+	(pt 176 8)
+	(drawing
+		(line (pt 92 12)(pt 117 12))
+		(line (pt 92 4)(pt 117 4))
+		(line (pt 121 8)(pt 176 8))
+		(line (pt 92 12)(pt 92 4))
+		(line (pt 117 4)(pt 121 8))
+		(line (pt 117 12)(pt 121 8))
+	)
+	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
+)
+(symbol
+	(rect 1512 456 1752 696)
+	(text "UC" (rect 5 0 21 12)(font "Arial" ))
+	(text "inst53" (rect 8 224 37 236)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "instruction[31..0]" (rect 0 0 82 12)(font "Arial" ))
+		(text "instruction[31..0]" (rect 21 27 103 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "zero" (rect 0 0 20 12)(font "Arial" ))
+		(text "zero" (rect 21 43 41 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 240 32)
+		(output)
+		(text "MUX_PC[1..0]" (rect 0 0 69 12)(font "Arial" ))
+		(text "MUX_PC[1..0]" (rect 161 27 230 39)(font "Arial" ))
+		(line (pt 240 32)(pt 224 32)(line_width 3))
+	)
+	(port
+		(pt 240 48)
+		(output)
+		(text "MUX_register[1..0]" (rect 0 0 90 12)(font "Arial" ))
+		(text "MUX_register[1..0]" (rect 143 43 233 55)(font "Arial" ))
+		(line (pt 240 48)(pt 224 48)(line_width 3))
+	)
+	(port
+		(pt 240 64)
+		(output)
+		(text "FLAG_register" (rect 0 0 70 12)(font "Arial" ))
+		(text "FLAG_register" (rect 160 59 230 71)(font "Arial" ))
+		(line (pt 240 64)(pt 224 64))
+	)
+	(port
+		(pt 240 80)
+		(output)
+		(text "opcode_ULA[4..0]" (rect 0 0 88 12)(font "Arial" ))
+		(text "opcode_ULA[4..0]" (rect 145 75 233 87)(font "Arial" ))
+		(line (pt 240 80)(pt 224 80)(line_width 3))
+	)
+	(port
+		(pt 240 96)
+		(output)
+		(text "MUX_ULA" (rect 0 0 50 12)(font "Arial" ))
+		(text "MUX_ULA" (rect 177 91 227 103)(font "Arial" ))
+		(line (pt 240 96)(pt 224 96))
+	)
+	(port
+		(pt 240 112)
+		(output)
+		(text "FLAG_memory" (rect 0 0 75 12)(font "Arial" ))
+		(text "FLAG_memory" (rect 156 107 231 119)(font "Arial" ))
+		(line (pt 240 112)(pt 224 112))
+	)
+	(port
+		(pt 240 128)
+		(output)
+		(text "MUX_write[1..0]" (rect 0 0 76 12)(font "Arial" ))
+		(text "MUX_write[1..0]" (rect 155 123 231 135)(font "Arial" ))
+		(line (pt 240 128)(pt 224 128)(line_width 3))
+	)
+	(port
+		(pt 240 144)
+		(output)
+		(text "FLAG_input" (rect 0 0 57 12)(font "Arial" ))
+		(text "FLAG_input" (rect 171 139 228 151)(font "Arial" ))
+		(line (pt 240 144)(pt 224 144))
+	)
+	(port
+		(pt 240 160)
+		(output)
+		(text "FLAG_output" (rect 0 0 64 12)(font "Arial" ))
+		(text "FLAG_output" (rect 165 155 229 167)(font "Arial" ))
+		(line (pt 240 160)(pt 224 160))
+	)
+	(port
+		(pt 240 176)
+		(output)
+		(text "blank" (rect 0 0 25 12)(font "Arial" ))
+		(text "blank" (rect 198 171 223 183)(font "Arial" ))
+		(line (pt 240 176)(pt 224 176))
+	)
+	(port
+		(pt 240 192)
+		(output)
+		(text "halt" (rect 0 0 17 12)(font "Arial" ))
+		(text "halt" (rect 205 187 222 199)(font "Arial" ))
+		(line (pt 240 192)(pt 224 192))
+	)
+	(drawing
+		(rectangle (rect 16 16 224 224))
+	)
+)
+(symbol
+	(rect 3088 408 3336 520)
+	(text "ULA" (rect 5 0 27 12)(font "Arial" ))
+	(text "inst54" (rect 8 96 37 108)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "data_src[31..0]" (rect 0 0 74 12)(font "Arial" ))
+		(text "data_src[31..0]" (rect 21 27 95 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "data_tgtImd[31..0]" (rect 0 0 90 12)(font "Arial" ))
+		(text "data_tgtImd[31..0]" (rect 21 43 111 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "shamt[4..0]" (rect 0 0 56 12)(font "Arial" ))
+		(text "shamt[4..0]" (rect 21 59 77 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "opcode_ULA[4..0]" (rect 0 0 88 12)(font "Arial" ))
+		(text "opcode_ULA[4..0]" (rect 21 75 109 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 248 32)
+		(output)
+		(text "data_ULA[31..0]" (rect 0 0 80 12)(font "Arial" ))
+		(text "data_ULA[31..0]" (rect 160 27 240 39)(font "Arial" ))
+		(line (pt 248 32)(pt 232 32)(line_width 3))
+	)
+	(port
+		(pt 248 48)
+		(output)
+		(text "zero" (rect 0 0 20 12)(font "Arial" ))
+		(text "zero" (rect 211 43 231 55)(font "Arial" ))
+		(line (pt 248 48)(pt 232 48))
+	)
+	(drawing
+		(rectangle (rect 16 16 232 96))
+	)
+)
+(symbol
+	(rect 808 456 1040 568)
+	(text "PC" (rect 5 0 20 12)(font "Arial" ))
+	(text "inst" (rect 8 96 25 108)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "PC_next[31..0]" (rect 0 0 74 12)(font "Arial" ))
+		(text "PC_next[31..0]" (rect 21 27 95 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "halt" (rect 0 0 17 12)(font "Arial" ))
+		(text "halt" (rect 21 43 38 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 59 35 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 232 32)
+		(output)
+		(text "PC_current[31..0]" (rect 0 0 87 12)(font "Arial" ))
+		(text "PC_current[31..0]" (rect 138 27 225 39)(font "Arial" ))
+		(line (pt 232 32)(pt 216 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 216 96))
+	)
+)
+(symbol
+	(rect 1696 216 1912 296)
+	(text "Zero_Extender_26to32" (rect 5 0 115 12)(font "Arial" ))
+	(text "inst5" (rect 8 64 31 76)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "data_in[25..0]" (rect 0 0 67 12)(font "Arial" ))
+		(text "data_in[25..0]" (rect 21 27 88 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 216 32)
+		(output)
+		(text "data_out[31..0]" (rect 0 0 74 12)(font "Arial" ))
+		(text "data_out[31..0]" (rect 133 27 207 39)(font "Arial" ))
+		(line (pt 216 32)(pt 200 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 200 64))
+	)
+)
+(symbol
+	(rect 2744 280 2976 424)
+	(text "Multiplexer_PC" (rect 5 0 78 12)(font "Arial" ))
+	(text "inst6" (rect 8 128 31 140)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "PC_current[31..0]" (rect 0 0 87 12)(font "Arial" ))
+		(text "PC_current[31..0]" (rect 21 27 108 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "address[31..0]" (rect 0 0 70 12)(font "Arial" ))
+		(text "address[31..0]" (rect 21 43 91 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "immediate[31..0]" (rect 0 0 82 12)(font "Arial" ))
+		(text "immediate[31..0]" (rect 21 59 103 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "MUX_PC[1..0]" (rect 0 0 69 12)(font "Arial" ))
+		(text "MUX_PC[1..0]" (rect 21 75 90 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "data[31..0]" (rect 0 0 53 12)(font "Arial" ))
+		(text "data[31..0]" (rect 21 91 74 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 232 32)
+		(output)
+		(text "PC_next[31..0]" (rect 0 0 74 12)(font "Arial" ))
+		(text "PC_next[31..0]" (rect 149 27 223 39)(font "Arial" ))
+		(line (pt 232 32)(pt 216 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 216 128))
+	)
+)
+(symbol
+	(rect 1696 312 1904 392)
+	(text "Sign_Extender_16to32" (rect 5 0 114 12)(font "Arial" ))
+	(text "inst4" (rect 8 64 31 76)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "data_in[15..0]" (rect 0 0 67 12)(font "Arial" ))
+		(text "data_in[15..0]" (rect 21 27 88 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 208 32)
+		(output)
+		(text "data_out[31..0]" (rect 0 0 74 12)(font "Arial" ))
+		(text "data_out[31..0]" (rect 125 27 199 39)(font "Arial" ))
+		(line (pt 208 32)(pt 192 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 192 64))
+	)
+)
+(symbol
+	(rect 1112 456 1448 536)
+	(text "Memory_Instruction" (rect 5 0 102 12)(font "Arial" ))
+	(text "inst2" (rect 8 64 31 76)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "addr[ADDR_WIDTH-1..0]" (rect 0 0 125 12)(font "Arial" ))
+		(text "addr[ADDR_WIDTH-1..0]" (rect 21 27 146 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 43 35 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 336 32)
+		(output)
+		(text "instruction[DATA_WIDTH-1..0]" (rect 0 0 151 12)(font "Arial" ))
+		(text "instruction[DATA_WIDTH-1..0]" (rect 188 27 339 39)(font "Arial" ))
+		(line (pt 336 32)(pt 320 32)(line_width 3))
+	)
+	(parameter
+		"DATA_WIDTH"
+		"32"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"ADDR_WIDTH"
+		"32"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 320 64))
+	)
+	(annotation_block (parameter)(rect 1184 408 1384 456))
+)
+(symbol
+	(rect 3400 536 3704 648)
+	(text "Memory_Data" (rect 5 0 74 12)(font "Arial" ))
+	(text "inst3" (rect 8 96 31 108)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "addr[ADDR_WIDTH-1..0]" (rect 0 0 125 12)(font "Arial" ))
+		(text "addr[ADDR_WIDTH-1..0]" (rect 21 27 146 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "data[DATA_WIDTH-1..0]" (rect 0 0 121 12)(font "Arial" ))
+		(text "data[DATA_WIDTH-1..0]" (rect 21 43 142 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "we" (rect 0 0 12 12)(font "Arial" ))
+		(text "we" (rect 21 59 33 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 75 35 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 304 32)
+		(output)
+		(text "q[DATA_WIDTH-1..0]" (rect 0 0 106 12)(font "Arial" ))
+		(text "q[DATA_WIDTH-1..0]" (rect 194 27 300 39)(font "Arial" ))
+		(line (pt 304 32)(pt 288 32)(line_width 3))
+	)
+	(parameter
+		"DATA_WIDTH"
+		"32"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"ADDR_WIDTH"
+		"32"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 288 96))
+	)
+	(annotation_block (parameter)(rect 3448 488 3648 536))
+)
+(symbol
+	(rect 2376 408 2600 552)
+	(text "Database_Register" (rect 5 0 99 12)(font "Arial" ))
+	(text "inst8" (rect 8 128 31 140)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "addr_src[4..0]" (rect 0 0 68 12)(font "Arial" ))
+		(text "addr_src[4..0]" (rect 21 27 89 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "addr_tgt[4..0]" (rect 0 0 66 12)(font "Arial" ))
+		(text "addr_tgt[4..0]" (rect 21 43 87 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "addr_write[4..0]" (rect 0 0 75 12)(font "Arial" ))
+		(text "addr_write[4..0]" (rect 21 59 96 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "data_write[31..0]" (rect 0 0 81 12)(font "Arial" ))
+		(text "data_write[31..0]" (rect 21 75 102 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 91 35 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "FLAG_register" (rect 0 0 70 12)(font "Arial" ))
+		(text "FLAG_register" (rect 21 107 91 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112))
+	)
+	(port
+		(pt 224 32)
+		(output)
+		(text "data_src[31..0]" (rect 0 0 74 12)(font "Arial" ))
+		(text "data_src[31..0]" (rect 141 27 215 39)(font "Arial" ))
+		(line (pt 224 32)(pt 208 32)(line_width 3))
+	)
+	(port
+		(pt 224 48)
+		(output)
+		(text "data_tgt[31..0]" (rect 0 0 71 12)(font "Arial" ))
+		(text "data_tgt[31..0]" (rect 143 43 214 55)(font "Arial" ))
+		(line (pt 224 48)(pt 208 48)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 208 128))
+	)
+)
+(symbol
+	(rect 2744 456 2968 568)
+	(text "Multiplexer_Data_ULA" (rect 5 0 114 12)(font "Arial" ))
+	(text "inst9" (rect 8 96 31 108)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "data_tgt[31..0]" (rect 0 0 71 12)(font "Arial" ))
+		(text "data_tgt[31..0]" (rect 21 27 92 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "imediate[31..0]" (rect 0 0 73 12)(font "Arial" ))
+		(text "imediate[31..0]" (rect 21 43 94 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "MUX_ULA" (rect 0 0 50 12)(font "Arial" ))
+		(text "MUX_ULA" (rect 21 59 71 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 224 32)
+		(output)
+		(text "data_tgtImd[31..0]" (rect 0 0 90 12)(font "Arial" ))
+		(text "data_tgtImd[31..0]" (rect 127 27 217 39)(font "Arial" ))
+		(line (pt 224 32)(pt 208 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 208 96))
+	)
+)
+(symbol
+	(rect 3824 408 4072 552)
+	(text "Multiplexer_Data_Write" (rect 5 0 118 12)(font "Arial" ))
+	(text "inst10" (rect 8 128 37 140)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "data_ULA[31..0]" (rect 0 0 80 12)(font "Arial" ))
+		(text "data_ULA[31..0]" (rect 21 27 101 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "data_memory[31..0]" (rect 0 0 100 12)(font "Arial" ))
+		(text "data_memory[31..0]" (rect 21 43 121 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "PC_current[31..0]" (rect 0 0 87 12)(font "Arial" ))
+		(text "PC_current[31..0]" (rect 21 59 108 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "data_input[31..0]" (rect 0 0 82 12)(font "Arial" ))
+		(text "data_input[31..0]" (rect 21 75 103 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "MUX_write[1..0]" (rect 0 0 76 12)(font "Arial" ))
+		(text "MUX_write[1..0]" (rect 21 91 97 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 248 32)
+		(output)
+		(text "data_write[31..0]" (rect 0 0 81 12)(font "Arial" ))
+		(text "data_write[31..0]" (rect 159 27 240 39)(font "Arial" ))
+		(line (pt 248 32)(pt 232 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 232 128))
+	)
+)
+(symbol
+	(rect 2032 440 2272 552)
+	(text "Multiplexer_Address_Write" (rect 5 0 134 12)(font "Arial" ))
+	(text "inst1" (rect 8 96 31 108)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "addr_tgt[4..0]" (rect 0 0 66 12)(font "Arial" ))
+		(text "addr_tgt[4..0]" (rect 21 27 87 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "addr_dst[4..0]" (rect 0 0 68 12)(font "Arial" ))
+		(text "addr_dst[4..0]" (rect 21 43 89 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "MUX_register[1..0]" (rect 0 0 90 12)(font "Arial" ))
+		(text "MUX_register[1..0]" (rect 21 59 111 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 240 32)
+		(output)
+		(text "addr_write[4..0]" (rect 0 0 75 12)(font "Arial" ))
+		(text "addr_write[4..0]" (rect 156 27 231 39)(font "Arial" ))
+		(line (pt 240 32)(pt 224 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 224 96))
+	)
+)
+(connector
+	(pt 1752 648)
+	(pt 1768 648)
+)
+(connector
+	(pt 1768 712)
+	(pt 1768 648)
+)
+(connector
+	(text "zero" (rect 1482 488 1502 500)(font "Arial" ))
+	(pt 1512 504)
+	(pt 1472 504)
+)
+(connector
+	(pt 1752 488)
+	(pt 1928 488)
+	(bus)
+)
+(connector
+	(pt 1752 568)
+	(pt 1960 568)
+)
+(connector
+	(pt 1752 584)
+	(pt 1944 584)
+	(bus)
+)
+(connector
+	(pt 1752 504)
+	(pt 2032 504)
+	(bus)
+)
+(connector
+	(pt 1976 552)
+	(pt 1976 584)
+)
+(connector
+	(pt 1752 552)
+	(pt 1976 552)
+)
+(connector
+	(pt 1992 520)
+	(pt 1992 568)
+)
+(connector
+	(pt 1752 520)
+	(pt 1992 520)
+)
+(connector
+	(pt 1944 584)
+	(pt 1944 664)
+	(bus)
+)
+(connector
+	(pt 752 712)
+	(pt 752 504)
+)
+(connector
+	(pt 1768 712)
+	(pt 752 712)
+)
+(connector
+	(text "clock" (rect 714 504 739 516)(font "Arial" ))
+	(pt 704 520)
+	(pt 736 520)
+)
+(connector
+	(pt 752 504)
+	(pt 808 504)
+)
+(connector
+	(text "clock" (rect 778 504 803 516)(font "Arial" ))
+	(pt 768 520)
+	(pt 808 520)
+)
+(connector
+	(text "clock" (rect 1082 488 1107 500)(font "Arial" ))
+	(pt 1072 504)
+	(pt 1112 504)
+)
+(connector
+	(pt 1928 248)
+	(pt 1912 248)
+	(bus)
+)
+(connector
+	(pt 1072 488)
+	(pt 1072 200)
+	(bus)
+)
+(connector
+	(pt 1040 488)
+	(pt 1072 488)
+	(bus)
+)
+(connector
+	(pt 1072 488)
+	(pt 1112 488)
+	(bus)
+)
+(connector
+	(pt 1472 488)
+	(pt 1472 296)
+	(bus)
+)
+(connector
+	(pt 1448 488)
+	(pt 1472 488)
+	(bus)
+)
+(connector
+	(pt 1472 488)
+	(pt 1512 488)
+	(bus)
+)
+(connector
+	(pt 808 488)
+	(pt 792 488)
+	(bus)
+)
+(connector
+	(pt 792 184)
+	(pt 792 488)
+	(bus)
+)
+(connector
+	(pt 2304 568)
+	(pt 2304 520)
+)
+(connector
+	(pt 2616 584)
+	(pt 2616 520)
+)
+(connector
+	(pt 2728 456)
+	(pt 2728 488)
+	(bus)
+)
+(connector
+	(pt 2744 488)
+	(pt 2728 488)
+	(bus)
+)
+(connector
+	(pt 2968 488)
+	(pt 2984 488)
+	(bus)
+)
+(connector
+	(pt 2984 488)
+	(pt 2984 456)
+	(bus)
+)
+(connector
+	(text "zero" (rect 3346 440 3366 452)(font "Arial" ))
+	(pt 3368 456)
+	(pt 3336 456)
+)
+(connector
+	(pt 1976 584)
+	(pt 2616 584)
+)
+(connector
+	(pt 1992 568)
+	(pt 2304 568)
+)
+(connector
+	(pt 1960 568)
+	(pt 1960 600)
+)
+(connector
+	(pt 2632 456)
+	(pt 2632 584)
+	(bus)
+)
+(connector
+	(pt 3384 440)
+	(pt 3384 568)
+	(bus)
+)
+(connector
+	(pt 3384 568)
+	(pt 3400 568)
+	(bus)
+)
+(connector
+	(pt 3704 568)
+	(pt 3720 568)
+	(bus)
+)
+(connector
+	(pt 3720 568)
+	(pt 3720 456)
+	(bus)
+)
+(connector
+	(pt 1944 664)
+	(pt 3800 664)
+	(bus)
+)
+(connector
+	(pt 3800 664)
+	(pt 3800 504)
+	(bus)
+)
+(connector
+	(pt 1928 488)
+	(pt 1928 360)
+	(bus)
+)
+(connector
+	(pt 2632 440)
+	(pt 2632 376)
+	(bus)
+)
+(connector
+	(pt 1928 248)
+	(pt 1928 328)
+	(bus)
+)
+(connector
+	(pt 2728 312)
+	(pt 2744 312)
+	(bus)
+)
+(connector
+	(pt 1072 200)
+	(pt 2728 200)
+	(bus)
+)
+(connector
+	(pt 2728 200)
+	(pt 2728 312)
+	(bus)
+)
+(connector
+	(pt 2976 312)
+	(pt 2992 312)
+	(bus)
+)
+(connector
+	(pt 2992 184)
+	(pt 2992 312)
+	(bus)
+)
+(connector
+	(pt 792 184)
+	(pt 2992 184)
+	(bus)
+)
+(connector
+	(pt 2600 456)
+	(pt 2632 456)
+	(bus)
+)
+(connector
+	(pt 2632 456)
+	(pt 2728 456)
+	(bus)
+)
+(connector
+	(pt 3336 440)
+	(pt 3384 440)
+	(bus)
+)
+(connector
+	(pt 2600 440)
+	(pt 2632 440)
+	(bus)
+)
+(connector
+	(pt 2632 440)
+	(pt 3088 440)
+	(bus)
+)
+(connector
+	(pt 2984 456)
+	(pt 3088 456)
+	(bus)
+)
+(connector
+	(pt 1928 328)
+	(pt 2744 328)
+	(bus)
+)
+(connector
+	(pt 1904 344)
+	(pt 2744 344)
+	(bus)
+)
+(connector
+	(pt 1928 360)
+	(pt 2744 360)
+	(bus)
+)
+(connector
+	(pt 2632 376)
+	(pt 2744 376)
+	(bus)
+)
+(connector
+	(pt 2632 584)
+	(pt 3400 584)
+	(bus)
+)
+(connector
+	(pt 1960 600)
+	(pt 3400 600)
+)
+(connector
+	(text "clock" (rect 3370 600 3395 612)(font "Arial" ))
+	(pt 3368 616)
+	(pt 3400 616)
+)
+(connector
+	(pt 2272 472)
+	(pt 2376 472)
+	(bus)
+)
+(connector
+	(pt 2304 520)
+	(pt 2376 520)
+)
+(connector
+	(pt 2616 520)
+	(pt 2744 520)
+)
+(connector
+	(pt 3384 440)
+	(pt 3824 440)
+	(bus)
+)
+(connector
+	(pt 3720 456)
+	(pt 3824 456)
+	(bus)
+)
+(connector
+	(pt 3800 504)
+	(pt 3824 504)
+	(bus)
+)
+(connector
+	(text "clock" (rect 2298 488 2323 500)(font "Arial" ))
+	(pt 2376 504)
+	(pt 2288 504)
+)
+(connector
+	(text "instruction[31..0]" (rect 1482 280 1564 292)(font "Arial" ))
+	(pt 1472 296)
+	(pt 1560 296)
+	(bus)
+)
+(connector
+	(text "instruction[25..0]" (rect 1618 232 1700 244)(font "Arial" ))
+	(pt 1696 248)
+	(pt 1608 248)
+	(bus)
+)
+(connector
+	(text "instruction[15..0]" (rect 1618 328 1700 340)(font "Arial" ))
+	(pt 1696 344)
+	(pt 1608 344)
+	(bus)
+)
+(connector
+	(text "opcode_ULA[4..0]" (rect 1762 520 1850 532)(font "Arial" ))
+	(pt 1752 536)
+	(pt 1824 536)
+	(bus)
+)
+(connector
+	(text "instruction[20..16]" (rect 1954 456 2042 468)(font "Arial" ))
+	(pt 2032 472)
+	(pt 1944 472)
+	(bus)
+)
+(connector
+	(text "instruction[15..11]" (rect 1954 472 2042 484)(font "Arial" ))
+	(pt 1944 488)
+	(pt 2032 488)
+	(bus)
+)
+(connector
+	(text "instruction[25..21]" (rect 2298 424 2386 436)(font "Arial" ))
+	(pt 2376 440)
+	(pt 2288 440)
+	(bus)
+)
+(connector
+	(text "instruction[20..16]" (rect 2298 440 2386 452)(font "Arial" ))
+	(pt 2376 456)
+	(pt 2288 456)
+	(bus)
+)
+(connector
+	(text "data_write[31..0]" (rect 2288 472 2369 484)(font "Arial" ))
+	(pt 2376 488)
+	(pt 2288 488)
+	(bus)
+)
+(connector
+	(text "instruction[10..6]" (rect 3010 456 3092 468)(font "Arial" ))
+	(pt 3000 472)
+	(pt 3088 472)
+	(bus)
+)
+(connector
+	(text "opcode_ULA[4..0]" (rect 3002 472 3090 484)(font "Arial" ))
+	(pt 3000 488)
+	(pt 3088 488)
+	(bus)
+)
+(connector
+	(text "imediate[31..0]" (rect 2658 488 2731 500)(font "Arial" ))
+	(pt 2648 504)
+	(pt 2744 504)
+	(bus)
+)
+(connector
+	(text "PC_current[31..0]" (rect 3746 456 3833 468)(font "Arial" ))
+	(pt 3736 472)
+	(pt 3824 472)
+	(bus)
+)
+(connector
+	(text "data_write[31..0]" (rect 4082 424 4163 436)(font "Arial" ))
+	(pt 4072 440)
+	(pt 4152 440)
+	(bus)
+)
+(junction (pt 1472 488))
+(junction (pt 1072 488))
+(junction (pt 2632 456))
+(junction (pt 3384 440))
+(junction (pt 2632 440))
