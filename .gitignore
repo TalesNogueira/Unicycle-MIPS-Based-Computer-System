@@ -1,22 +1,27 @@
-# Quartus compilation output folder(s)
-MIPS/db/
-MIPS/incremental_db/
-MIPS/output_files/
-MIPS/simulation/
+# Quartus compilation output folders
+Processor_MIPS/db/
+Processor_MIPS/simulation/
+Processor_MIPS/incremental_db/
+Processor_MIPS/output_files/
 
-# Backups and temporary file(s)
-MIPS/*.bak
-MIPS/*.rpt
-MIPS/*.qws
-MIPS/*.qar
-MIPS/*.archive.rpt
+#   Allow important FPGA output files
+!Processor_MIPS/output_files/*.sof
+!Processor_MIPS/output_files/*.jdi
+!Processor_MIPS/output_files/*.pin
 
-# Restored project folder(s)
-MIPS/*_restored/
+#   Compilation reports
+Processor_MIPS/*.rpt
+Processor_MIPS/output_files/*.rpt
+Processor_MIPS/output_files/*.summary
+Processor_MIPS/output_files/*.smsg
+Processor_MIPS/output_files/*.done
 
-# Miscellaneous
-MIPS/*.tmp
-MIPS/*.temp
+# Backup and temporary files
+Processor_MIPS/*.qar
+Processor_MIPS/*.bak
+Processor_MIPS/*.tmp
+Processor_MIPS/*.temp
+Processor_MIPS/*.archive.rpt
 
-# Input file(s)
-MIPS/*.txt
+# Restored project folders
+Processor_MIPS/*_restored/

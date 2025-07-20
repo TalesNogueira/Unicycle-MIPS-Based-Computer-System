@@ -11,16 +11,11 @@ module Memory_Instruction
 );
 
 	// Declare the ROM variable
-	reg [31:0] rom[49:0];
+	reg [31:0] rom[299:0];
 
 	initial
 	begin
-		//$readmemb("software.txt", rom);
-		
-		//TIPOS DE INSTRUCOES:
-		//rom[0] <= 32'b000000_00000_00000_00000_00000_000000; //Tipo R
-		//rom[0] <= 32'b000000_00000_00000_0000000000000000; 	 //Tipo I
-		//rom[0] <= 32'b000000_00000000000000000000000000; 	 //Tipo J
+		$readmemb("instructions.mem", rom);
 	end
 
 	always @ (posedge clk)

@@ -12,13 +12,23 @@ module Database_Register (addr_src, addr_tgt, addr_write, data_write, clk, FLAG_
 	output signed [31:0]data_src;		// Data from Register[Source]
 	output signed [31:0]data_tgt;		// Data from Register[Target]
 	
-	reg [31:0]register[31:0];			// Register Database (32x32)
-	
-	initial register[32'd0] = 0;
+	reg [31:0] register[31:0];			// Register Database (32x32)
+
+	initial begin
+		integer i;
+		for (i = 0; i < 32; i = i + 1) begin
+			if (i == 1) 
+				register[i] = 32'd1;
+			else if (i == 29 || i == 30)
+				register[i] = 32'd256;
+			else
+				register[i] = 32'd0;
+		end
+	end
 	
 	always @(posedge clk)
 	begin
-		if(FLAG_register) register[addr_write] = data_write;
+		if(FLAG_register) register[addr_write] <= data_write;
 	end
 	
 	assign data_src = register[addr_src];

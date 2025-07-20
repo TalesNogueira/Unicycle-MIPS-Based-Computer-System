@@ -1,33 +1,22 @@
-module ULA (data_src, data_tgtImd, shamt, opcode_ULA, data_ULA, zero);
-	input [31:0]data_src;
-	input [31:0]data_tgtImd;
-	input [4:0]shamt;
-	
-	input [4:0]opcode_ULA;
-	
-	output reg [31:0]data_ULA;
-	output reg zero;
-	
-	initial
-		begin
+module ULA (input wire [31:0] data_src, input wire [31:0] data_tgtImd, input wire [4:0] shamt, input wire [4:0] opcode_ULA, output reg [31:0] data_ULA, output reg zero);
+	initial begin
 			data_ULA = 0;
 			zero = 0;
-		end
+	end
 	
-	always @(*)
-	begin
+	always @(*) begin
 		case(opcode_ULA)
 			/* move */
 			5'b00010:
 				begin
-					data_ULA = data_src;
+					data_ULA = $signed(data_src);
 					zero = 0;
 				end
 			
 			/* movei */
 			5'b00011:
 				begin
-					data_ULA = data_tgtImd;
+					data_ULA = $signed(data_tgtImd);
 					zero = 0;
 				end
 

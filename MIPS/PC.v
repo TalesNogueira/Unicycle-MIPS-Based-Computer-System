@@ -1,13 +1,9 @@
-module PC (PC_next, halt, clk, PC_current);
-	input wire [31:0] PC_next;
-	input wire halt;
-	input wire clk;
+module PC (input wire [31:0] PC_next, input wire clk, output reg [31:0] PC_current);
+	initial begin
+		PC_current = 0;
+	end
 	
-	output reg [31:0] PC_current;
-	
-	always @(negedge clk)
-		begin
-			if(!halt) 
+	always @(posedge clk) begin
 				PC_current <= PC_next;
-		end
+	end
 endmodule 
