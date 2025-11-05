@@ -1,27 +1,55 @@
 # Quartus compilation output folders
-Processor_MIPS/db/
-Processor_MIPS/simulation/
-Processor_MIPS/incremental_db/
-Processor_MIPS/output_files/
+MIPS/db/
+MIPS/simulation/
+MIPS/incremental_db/
+MIPS/output_files/
 
 #   Allow important FPGA output files
-!Processor_MIPS/output_files/*.sof
-!Processor_MIPS/output_files/*.jdi
-!Processor_MIPS/output_files/*.pin
+!MIPS/output_files/*.sof
+!MIPS/output_files/*.jdi
+!MIPS/output_files/*.pin
+
+# Also allow other generated programming files
+!MIPS/output_files/*.pof 
+!MIPS/output_files/*.jic 
+!MIPS/output_files/*.rbf 
+!MIPS/output_files/*.hex 
+!MIPS/output_files/*.mif 
+
+# If using Pin Planner or Timing Analyzer, allow constraints/scripts
+!MIPS/*.sdc               
+!MIPS/output_files/*.sdc  
+!MIPS/*.tcl               
+!MIPS/output_files/*.tcl  
 
 #   Compilation reports
-Processor_MIPS/*.rpt
-Processor_MIPS/output_files/*.rpt
-Processor_MIPS/output_files/*.summary
-Processor_MIPS/output_files/*.smsg
-Processor_MIPS/output_files/*.done
+MIPS/*.rpt
+MIPS/output_files/*.rpt
+MIPS/output_files/*.summary
+MIPS/output_files/*.smsg
+MIPS/output_files/*.done
 
 # Backup and temporary files
-Processor_MIPS/*.qar
-Processor_MIPS/*.bak
-Processor_MIPS/*.tmp
-Processor_MIPS/*.temp
-Processor_MIPS/*.archive.rpt
+MIPS/*.qar
+MIPS/*.bak
+MIPS/*.tmp
+MIPS/*.temp
+MIPS/*.archive.rpt
 
 # Restored project folders
-Processor_MIPS/*_restored/
+MIPS/*_restored/
+
+# Ignore ModelSim simulation and waveform results
+MIPS/*.vcd                
+MIPS/*.wlf                
+MIPS/output_files/*.vcd   
+MIPS/output_files/*.wlf   
+
+# Ignore Quartus and ModelSim workspace/lock files
+MIPS/*.qws                
+MIPS/*.qwf                
+MIPS/*.qdf                
+
+# Ignore standard log files
+MIPS/*.log                
+MIPS/output_files/*.log   
