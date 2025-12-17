@@ -1,9 +1,18 @@
-module PC (input wire [31:0] PC_next, input wire clk, output reg [31:0] PC_current);
+module PC (
+	input clock, reset,
+	input [31:0] PC_next,
+	output reg [31:0] PC_current
+);
+
 	initial begin
 		PC_current = 0;
 	end
-	
-	always @(posedge clk) begin
-				PC_current <= PC_next;
+
+	always @(negedge clock or posedge reset) begin
+		if (reset)
+			PC_current <= 0;
+		 else
+			PC_current <= PC_next;
 	end
-endmodule 
+endmodule
+ 

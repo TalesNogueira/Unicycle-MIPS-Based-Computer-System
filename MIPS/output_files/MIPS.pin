@@ -1,21 +1,22 @@
- -- Copyright (C) 1991-2013 Altera Corporation
+ -- Copyright (C) 2025  Altera Corporation. All rights reserved.
  -- Your use of Altera Corporation's design tools, logic functions 
- -- and other software and tools, and its AMPP partner logic 
+ -- and other software and tools, and any partner logic 
  -- functions, and any output files from any of the foregoing 
  -- (including device programming or simulation files), and any 
  -- associated documentation or information are expressly subject 
  -- to the terms and conditions of the Altera Program License 
- -- Subscription Agreement, Altera MegaCore Function License 
- -- Agreement, or other applicable license agreement, including, 
- -- without limitation, that your use is for the sole purpose of 
- -- programming logic devices manufactured by Altera and sold by 
- -- Altera or its authorized distributors.  Please refer to the 
- -- applicable agreement for further details.
+ -- Subscription Agreement, the Altera Quartus Prime License Agreement,
+ -- the Altera IP License Agreement, or other applicable license
+ -- agreement, including, without limitation, that your use is for
+ -- the sole purpose of programming logic devices manufactured by
+ -- Altera and sold by Altera or its authorized distributors.  Please
+ -- refer to the Altera Software License Subscription Agreements 
+ -- on the Quartus Prime software download page.
  -- 
- -- This is a Quartus II output file. It is for reporting purposes only, and is
- -- not intended for use as a Quartus II input file. This file cannot be used
- -- to make Quartus II pin assignments - for instructions on how to make pin
- -- assignments, please see Quartus II help.
+ -- This is a Quartus Prime output file. It is for reporting purposes only, and is
+ -- not intended for use as a Quartus Prime input file. This file cannot be used
+ -- to make Quartus Prime pin assignments - for instructions on how to make pin
+ -- assignments, please see Quartus Prime help.
  ---------------------------------------------------------------------------------
 
 
@@ -26,30 +27,30 @@
  -- VCCINT        : Dedicated power pin, which MUST be connected to VCC  (1.2V).
  -- VCCIO         : Dedicated power pin, which MUST be connected to VCC
  --                 of its bank.
- --					Bank 1:		2.5V
- --					Bank 2:		2.5V
- --					Bank 3:		2.5V
- --					Bank 4:		2.5V
- --					Bank 5:		2.5V
- --					Bank 6:		2.5V
- --					Bank 7:		2.5V
- --					Bank 8:		2.5V
+ --                  Bank 1:       2.5V
+ --                  Bank 2:       2.5V
+ --                  Bank 3:       2.5V
+ --                  Bank 4:       2.5V
+ --                  Bank 5:       2.5V
+ --                  Bank 6:       2.5V
+ --                  Bank 7:       2.5V
+ --                  Bank 8:       2.5V
  -- GND           : Dedicated ground pin. Dedicated GND pins MUST be connected to GND.
- --					It can also be used to report unused dedicated pins. The connection
- --					on the board for unused dedicated pins depends on whether this will
- --					be used in a future design. One example is device migration. When
- --					using device migration, refer to the device pin-tables. If it is a
- --					GND pin in the pin table or if it will not be used in a future design
- --					for another purpose the it MUST be connected to GND. If it is an unused
- --					dedicated pin, then it can be connected to a valid signal on the board
- --					(low, high, or toggling) if that signal is required for a different
- --					revision of the design.
+ --                  It can also be used to report unused dedicated pins. The connection
+ --                  on the board for unused dedicated pins depends on whether this will
+ --                  be used in a future design. One example is device migration. When
+ --                  using device migration, refer to the device pin-tables. If it is a
+ --                  GND pin in the pin table or if it will not be used in a future design
+ --                  for another purpose the it MUST be connected to GND. If it is an unused
+ --                  dedicated pin, then it can be connected to a valid signal on the board
+ --                  (low, high, or toggling) if that signal is required for a different
+ --                  revision of the design.
  -- GND+          : Unused input pin. It can also be used to report unused dual-purpose pins.
- --					This pin should be connected to GND. It may also be connected  to a
- --					valid signal  on the board  (low, high, or toggling)  if that signal
- --					is required for a different revision of the design.
+ --                  This pin should be connected to GND. It may also be connected  to a
+ --                  valid signal  on the board  (low, high, or toggling)  if that signal
+ --                  is required for a different revision of the design.
  -- GND*          : Unused  I/O  pin. Connect each pin marked GND* directly to GND
- --           	    or leave it unconnected.
+ --                  or leave it unconnected.
  -- RESERVED      : Unused I/O pin, which MUST be left unconnected.
  -- RESERVED_INPUT    : Pin is tri-stated and should be connected to the board.
  -- RESERVED_INPUT_WITH_WEAK_PULLUP    : Pin is tri-stated with internal weak pull-up resistor.
@@ -63,7 +64,7 @@
  -- Pin directions (input, output or bidir) are based on device operating in user mode.
  ---------------------------------------------------------------------------------
 
-Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 CHIP  "MIPS"  ASSIGNED TO AN: EP4CE115F29C7
 
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
@@ -107,19 +108,19 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AA10      :        :                   :      
 VCCIO3                       : AA11      : power  :                   : 2.5V    : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA12      :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA13      :        :                   :         : 3         :                
-hex_7_6                      : AA14      : output : 2.5 V             :         : 3         : Y              
-hex_6_5                      : AA15      : output : 2.5 V             :         : 4         : Y              
-hex_6_2                      : AA16      : output : 2.5 V             :         : 4         : Y              
-hex_6_0                      : AA17      : output : 2.5 V             :         : 4         : Y              
+hex_7[6]                     : AA14      : output : 2.5 V             :         : 3         : Y              
+hex_6[5]                     : AA15      : output : 2.5 V             :         : 4         : Y              
+hex_6[2]                     : AA16      : output : 2.5 V             :         : 4         : Y              
+hex_6[0]                     : AA17      : output : 2.5 V             :         : 4         : Y              
 VCCIO4                       : AA18      : power  :                   : 2.5V    : 4         :                
-hex_4_1                      : AA19      : output : 2.5 V             :         : 4         : Y              
+hex_4[1]                     : AA19      : output : 2.5 V             :         : 4         : Y              
 GNDA4                        : AA20      : gnd    :                   :         :           :                
-hex_3_3                      : AA21      : output : 2.5 V             :         : 4         : Y              
+hex_3[3]                     : AA21      : output : 2.5 V             :         : 4         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA22      :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA23      :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA24      :        :                   :         : 5         :                
-hex_2_0                      : AA25      : output : 2.5 V             :         : 5         : Y              
-hex_2_1                      : AA26      : output : 2.5 V             :         : 5         : Y              
+hex_2[0]                     : AA25      : output : 2.5 V             :         : 5         : Y              
+hex_2[1]                     : AA26      : output : 2.5 V             :         : 5         : Y              
 GND                          : AA27      : gnd    :                   :         :           :                
 VCCIO5                       : AA28      : power  :                   : 2.5V    : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB1       :        :                   :         : 2         :                
@@ -136,14 +137,14 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AB11      :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB12      :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB13      :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB14      :        :                   :         : 3         :                
-hex_6_4                      : AB15      : output : 2.5 V             :         : 4         : Y              
-hex_6_1                      : AB16      : output : 2.5 V             :         : 4         : Y              
-hex_6_3                      : AB17      : output : 2.5 V             :         : 4         : Y              
-hex_5_2                      : AB18      : output : 2.5 V             :         : 4         : Y              
-hex_4_0                      : AB19      : output : 2.5 V             :         : 4         : Y              
-hex_3_2                      : AB20      : output : 2.5 V             :         : 4         : Y              
+hex_6[4]                     : AB15      : output : 2.5 V             :         : 4         : Y              
+hex_6[1]                     : AB16      : output : 2.5 V             :         : 4         : Y              
+hex_6[3]                     : AB17      : output : 2.5 V             :         : 4         : Y              
+hex_5[2]                     : AB18      : output : 2.5 V             :         : 4         : Y              
+hex_4[0]                     : AB19      : output : 2.5 V             :         : 4         : Y              
+hex_3[2]                     : AB20      : output : 2.5 V             :         : 4         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB21      :        :                   :         : 4         :                
-push_input_confirm           : AB22      : input  : 2.5 V             :         : 4         : Y              
+push_confirm                 : AB22      : input  : 2.5 V             :         : 4         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB23      :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB24      :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB25      :        :                   :         : 5         :                
@@ -164,14 +165,14 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AC11      :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC12      :        :                   :         : 3         :                
 GND                          : AC13      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC14      :        :                   :         : 3         :                
-push_manual_clock            : AC15      : input  : 2.5 V             :         : 4         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AC15      :        :                   :         : 4         :                
 GND                          : AC16      : gnd    :                   :         :           :                
-hex_6_6                      : AC17      : output : 2.5 V             :         : 4         : Y              
-hex_5_1                      : AC18      : output : 2.5 V             :         : 4         : Y              
-switch_5                     : AC19      : input  : 2.5 V             :         : 4         : Y              
+hex_6[6]                     : AC17      : output : 2.5 V             :         : 4         : Y              
+hex_5[1]                     : AC18      : output : 2.5 V             :         : 4         : Y              
+switches[5]                  : AC19      : input  : 2.5 V             :         : 4         : Y              
 GND                          : AC20      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC21      :        :                   :         : 4         :                
-switch_12                    : AC22      : input  : 2.5 V             :         : 4         : Y              
+switches[12]                 : AC22      : input  : 2.5 V             :         : 4         : Y              
 GND                          : AC23      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC24      :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC25      :        :                   :         : 5         :                
@@ -192,16 +193,16 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AD11      :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AD12      :        :                   :         : 3         :                
 VCCIO3                       : AD13      : power  :                   : 2.5V    : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AD14      :        :                   :         : 3         :                
-switch_3                     : AD15      : input  : 2.5 V             :         : 4         : Y              
+switches[3]                  : AD15      : input  : 2.5 V             :         : 4         : Y              
 VCCIO4                       : AD16      : power  :                   : 2.5V    : 4         :                
-hex_7_0                      : AD17      : output : 2.5 V             :         : 4         : Y              
-hex_5_0                      : AD18      : output : 2.5 V             :         : 4         : Y              
-switch_7                     : AD19      : input  : 2.5 V             :         : 4         : Y              
+hex_7[0]                     : AD17      : output : 2.5 V             :         : 4         : Y              
+hex_5[0]                     : AD18      : output : 2.5 V             :         : 4         : Y              
+switches[7]                  : AD19      : input  : 2.5 V             :         : 4         : Y              
 VCCIO4                       : AD20      : power  :                   : 2.5V    : 4         :                
-switch_1                     : AD21      : input  : 2.5 V             :         : 4         : Y              
+switches[1]                  : AD21      : input  : 2.5 V             :         : 4         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AD22      :        :                   :         : 4         :                
 VCCIO4                       : AD23      : power  :                   : 2.5V    : 4         :                
-hex_3_4                      : AD24      : output : 2.5 V             :         : 4         : Y              
+hex_3[4]                     : AD24      : output : 2.5 V             :         : 4         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AD25      :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AD26      :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AD27      :        :                   :         : 5         :                
@@ -220,14 +221,14 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AE11      :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE12      :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE13      :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE14      :        :                   :         : 3         :                
-switch_4                     : AE15      : input  : 2.5 V             :         : 4         : Y              
-switch_2                     : AE16      : input  : 2.5 V             :         : 4         : Y              
-hex_7_1                      : AE17      : output : 2.5 V             :         : 4         : Y              
-hex_4_6                      : AE18      : output : 2.5 V             :         : 4         : Y              
-hex_4_4                      : AE19      : output : 2.5 V             :         : 4         : Y              
+switches[4]                  : AE15      : input  : 2.5 V             :         : 4         : Y              
+switches[2]                  : AE16      : input  : 2.5 V             :         : 4         : Y              
+hex_7[1]                     : AE17      : output : 2.5 V             :         : 4         : Y              
+hex_4[6]                     : AE18      : output : 2.5 V             :         : 4         : Y              
+hex_4[4]                     : AE19      : output : 2.5 V             :         : 4         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE20      :        :                   :         : 4         :                
-switch_10                    : AE21      : input  : 2.5 V             :         : 4         : Y              
-switch_13                    : AE22      : input  : 2.5 V             :         : 4         : Y              
+switches[10]                 : AE21      : input  : 2.5 V             :         : 4         : Y              
+switches[13]                 : AE22      : input  : 2.5 V             :         : 4         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE23      :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE24      :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE25      :        :                   :         : 4         :                
@@ -248,17 +249,17 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AF11      :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF12      :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF13      :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF14      :        :                   :         : 3         :                
-switch_8                     : AF15      : input  : 2.5 V             :         : 4         : Y              
-switch_6                     : AF16      : input  : 2.5 V             :         : 4         : Y              
-hex_7_4                      : AF17      : output : 2.5 V             :         : 4         : Y              
-hex_5_5                      : AF18      : output : 2.5 V             :         : 4         : Y              
-hex_4_5                      : AF19      : output : 2.5 V             :         : 4         : Y              
+switches[8]                  : AF15      : input  : 2.5 V             :         : 4         : Y              
+switches[6]                  : AF16      : input  : 2.5 V             :         : 4         : Y              
+hex_7[4]                     : AF17      : output : 2.5 V             :         : 4         : Y              
+hex_5[5]                     : AF18      : output : 2.5 V             :         : 4         : Y              
+hex_4[5]                     : AF19      : output : 2.5 V             :         : 4         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF20      :        :                   :         : 4         :                
-switch_14                    : AF21      : input  : 2.5 V             :         : 4         : Y              
-switch_15                    : AF22      : input  : 2.5 V             :         : 4         : Y              
-hex_3_5                      : AF23      : output : 2.5 V             :         : 4         : Y              
-switch_9                     : AF24      : input  : 2.5 V             :         : 4         : Y              
-switch_11                    : AF25      : input  : 2.5 V             :         : 4         : Y              
+switches[14]                 : AF21      : input  : 2.5 V             :         : 4         : Y              
+switches[15]                 : AF22      : input  : 2.5 V             :         : 4         : Y              
+hex_3[5]                     : AF23      : output : 2.5 V             :         : 4         : Y              
+switches[9]                  : AF24      : input  : 2.5 V             :         : 4         : Y              
+switches[11]                 : AF25      : input  : 2.5 V             :         : 4         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF26      :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF27      :        :                   :         : 5         :                
 GND                          : AF28      : gnd    :                   :         :           :                
@@ -278,11 +279,11 @@ GND                          : AG13      : gnd    :                   :         
 GND+                         : AG14      :        :                   :         : 3         :                
 GND+                         : AG15      :        :                   :         : 4         :                
 GND                          : AG16      : gnd    :                   :         :           :                
-hex_7_2                      : AG17      : output : 2.5 V             :         : 4         : Y              
-hex_7_5                      : AG18      : output : 2.5 V             :         : 4         : Y              
-hex_5_4                      : AG19      : output : 2.5 V             :         : 4         : Y              
+hex_7[2]                     : AG17      : output : 2.5 V             :         : 4         : Y              
+hex_7[5]                     : AG18      : output : 2.5 V             :         : 4         : Y              
+hex_5[4]                     : AG19      : output : 2.5 V             :         : 4         : Y              
 GND                          : AG20      : gnd    :                   :         :           :                
-hex_4_2                      : AG21      : output : 2.5 V             :         : 4         : Y              
+hex_4[2]                     : AG21      : output : 2.5 V             :         : 4         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG22      :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG23      :        :                   :         : 4         :                
 GND                          : AG24      : gnd    :                   :         :           :                
@@ -305,11 +306,11 @@ VCCIO3                       : AH13      : power  :                   : 2.5V    
 GND+                         : AH14      :        :                   :         : 3         :                
 GND+                         : AH15      :        :                   :         : 4         :                
 VCCIO4                       : AH16      : power  :                   : 2.5V    : 4         :                
-hex_7_3                      : AH17      : output : 2.5 V             :         : 4         : Y              
-hex_5_6                      : AH18      : output : 2.5 V             :         : 4         : Y              
-hex_5_3                      : AH19      : output : 2.5 V             :         : 4         : Y              
+hex_7[3]                     : AH17      : output : 2.5 V             :         : 4         : Y              
+hex_5[6]                     : AH18      : output : 2.5 V             :         : 4         : Y              
+hex_5[3]                     : AH19      : output : 2.5 V             :         : 4         : Y              
 VCCIO4                       : AH20      : power  :                   : 2.5V    : 4         :                
-hex_4_3                      : AH21      : output : 2.5 V             :         : 4         : Y              
+hex_4[3]                     : AH21      : output : 2.5 V             :         : 4         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH22      :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH23      :        :                   :         : 4         :                
 VCCIO4                       : AH24      : power  :                   : 2.5V    : 4         :                
@@ -416,11 +417,11 @@ VCCIO8                       : E13       : power  :                   : 2.5V    
 RESERVED_INPUT_WITH_WEAK_PULLUP : E14       :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E15       :        :                   :         : 7         :                
 VCCIO7                       : E16       : power  :                   : 2.5V    : 7         :                
-hex_0_2                      : E17       : output : 2.5 V             :         : 7         : Y              
+hex_0[2]                     : E17       : output : 2.5 V             :         : 7         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : E18       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E19       :        :                   :         : 7         :                
 VCCIO7                       : E20       : power  :                   : 2.5V    : 7         :                
-led_input                    : E21       : output : 2.5 V             :         : 7         : Y              
+led_io                       : E21       : output : 2.5 V             :         : 7         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : E22       :        :                   :         : 7         :                
 VCCIO7                       : E23       : power  :                   : 2.5V    : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E24       :        :                   :         : 7         :                
@@ -449,7 +450,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : F18       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : F19       :        :                   :         : 7         :                
 GND                          : F20       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F21       :        :                   :         : 7         :                
-hex_0_1                      : F22       : output : 2.5 V             :         : 7         : Y              
+hex_0[1]                     : F22       : output : 2.5 V             :         : 7         : Y              
 GND                          : F23       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F24       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F25       :        :                   :         : 6         :                
@@ -470,13 +471,13 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : G11       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : G12       :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : G13       :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : G14       :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : G15       :        :                   :         : 7         :                
+led_negative                 : G15       : output : 2.5 V             :         : 7         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : G16       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : G17       :        :                   :         : 7         :                
-hex_0_0                      : G18       : output : 2.5 V             :         : 7         : Y              
-led_negative                 : G19       : output : 2.5 V             :         : 7         : Y              
+hex_0[0]                     : G18       : output : 2.5 V             :         : 7         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : G19       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : G20       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : G21       :        :                   :         : 7         :                
+led_bios                     : G21       : output : 2.5 V             :         : 7         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : G22       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : G23       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : G24       :        :                   :         : 6         :                
@@ -499,13 +500,13 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : H12       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : H13       :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H14       :        :                   :         : 8         :                
 led_hold                     : H15       : output : 2.5 V             :         : 7         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : H16       :        :                   :         : 7         :                
+led_interrupt                : H16       : output : 2.5 V             :         : 7         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : H17       :        :                   :         : 7         :                
 VCCIO7                       : H18       : power  :                   : 2.5V    : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H19       :        :                   :         : 7         :                
 GNDA2                        : H20       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H21       :        :                   :         : 7         :                
-hex_0_6                      : H22       : output : 2.5 V             :         : 6         : Y              
+hex_0[6]                     : H22       : output : 2.5 V             :         : 6         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : H23       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H24       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H25       :        :                   :         : 6         :                
@@ -533,20 +534,20 @@ GND                          : J18       : gnd    :                   :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : J19       :        :                   :         : 7         :                
 VCCD_PLL2                    : J20       : power  :                   : 1.2V    :           :                
 VCCA2                        : J21       : power  :                   : 2.5V    :           :                
-hex_0_5                      : J22       : output : 2.5 V             :         : 6         : Y              
+hex_0[5]                     : J22       : output : 2.5 V             :         : 6         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : J23       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : J24       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : J25       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : J26       :        :                   :         : 6         :                
 GND+                         : J27       :        :                   :         : 6         :                
 GND+                         : J28       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : K1        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : K2        :        :                   :         : 1         :                
+lcd_DATA[4]                  : K1        : output : 2.5 V             :         : 1         : Y              
+lcd_DATA[5]                  : K2        : output : 2.5 V             :         : 1         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : K3        :        :                   :         : 1         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K4        :        :                   :         : 1         :                
 VCCIO1                       : K5        : power  :                   : 2.5V    : 1         :                
 GND                          : K6        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : K7        :        :                   :         : 1         :                
+lcd_DATA[3]                  : K7        : output : 2.5 V             :         : 1         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : K8        :        :                   :         : 1         :                
 VCCINT                       : K9        : power  :                   : 1.2V    :           :                
 GND                          : K10       : gnd    :                   :         :           :                
@@ -568,12 +569,12 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : K25       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : K26       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K27       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K28       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : L1        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : L2        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : L3        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : L4        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : L5        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : L6        :        :                   :         : 1         :                
+lcd_DATA[1]                  : L1        : output : 2.5 V             :         : 1         : Y              
+lcd_DATA[2]                  : L2        : output : 2.5 V             :         : 1         : Y              
+lcd_DATA[0]                  : L3        : output : 2.5 V             :         : 1         : Y              
+lcd_EN                       : L4        : output : 2.5 V             :         : 1         : Y              
+lcd_ON                       : L5        : output : 2.5 V             :         : 1         : Y              
+lcd_BLON                     : L6        : output : 2.5 V             :         : 1         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : L7        :        :                   :         : 1         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L8        :        :                   :         : 1         :                
 GND                          : L9        : gnd    :                   :         :           :                
@@ -592,15 +593,15 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : L21       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : L22       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L23       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L24       :        :                   :         : 6         :                
-hex_0_4                      : L25       : output : 2.5 V             :         : 6         : Y              
-hex_0_3                      : L26       : output : 2.5 V             :         : 6         : Y              
+hex_0[4]                     : L25       : output : 2.5 V             :         : 6         : Y              
+hex_0[3]                     : L26       : output : 2.5 V             :         : 6         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : L27       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L28       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : M1        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : M2        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : M3        :        :                   :         : 1         :                
+lcd_RW                       : M1        : output : 2.5 V             :         : 1         : Y              
+lcd_RS                       : M2        : output : 2.5 V             :         : 1         : Y              
+lcd_DATA[6]                  : M3        : output : 2.5 V             :         : 1         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : M4        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : M5        :        :                   :         : 1         :                
+lcd_DATA[7]                  : M5        : output : 2.5 V             :         : 1         : Y              
 nSTATUS                      : M6        :        :                   :         : 1         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : M7        :        :                   :         : 1         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : M8        :        :                   :         : 1         :                
@@ -619,7 +620,7 @@ GND                          : M20       : gnd    :                   :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : M21       :        :                   :         : 6         :                
 MSEL2                        : M22       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : M23       :        :                   :         : 6         :                
-hex_1_0                      : M24       : output : 2.5 V             :         : 6         : Y              
+hex_1[0]                     : M24       : output : 2.5 V             :         : 6         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : M25       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : M26       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : M27       :        :                   :         : 6         :                
@@ -756,10 +757,10 @@ GND                          : U17       : gnd    :                   :         
 VCCINT                       : U18       : power  :                   : 1.2V    :           :                
 GND                          : U19       : gnd    :                   :         :           :                
 VCCINT                       : U20       : power  :                   : 1.2V    :           :                
-hex_3_1                      : U21       : output : 2.5 V             :         : 5         : Y              
+hex_3[1]                     : U21       : output : 2.5 V             :         : 5         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : U22       :        :                   :         : 5         :                
-hex_1_5                      : U23       : output : 2.5 V             :         : 5         : Y              
-hex_1_6                      : U24       : output : 2.5 V             :         : 5         : Y              
+hex_1[5]                     : U23       : output : 2.5 V             :         : 5         : Y              
+hex_1[6]                     : U24       : output : 2.5 V             :         : 5         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : U25       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : U26       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : U27       :        :                   :         : 5         :                
@@ -784,7 +785,7 @@ VCCINT                       : V17       : power  :                   : 1.2V    
 GND                          : V18       : gnd    :                   :         :           :                
 VCCINT                       : V19       : power  :                   : 1.2V    :           :                
 GND                          : V20       : gnd    :                   :         :           :                
-hex_3_0                      : V21       : output : 2.5 V             :         : 5         : Y              
+hex_3[0]                     : V21       : output : 2.5 V             :         : 5         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : V22       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : V23       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : V24       :        :                   :         : 5         :                
@@ -812,16 +813,16 @@ GND                          : W17       : gnd    :                   :         
 VCCINT                       : W18       : power  :                   : 1.2V    :           :                
 GND                          : W19       : gnd    :                   :         :           :                
 VCCINT                       : W20       : power  :                   : 1.2V    :           :                
-hex_1_2                      : W21       : output : 2.5 V             :         : 5         : Y              
-hex_1_3                      : W22       : output : 2.5 V             :         : 5         : Y              
+hex_1[2]                     : W21       : output : 2.5 V             :         : 5         : Y              
+hex_1[3]                     : W22       : output : 2.5 V             :         : 5         : Y              
 GND                          : W23       : gnd    :                   :         :           :                
 VCCIO5                       : W24       : power  :                   : 2.5V    : 5         :                
-hex_1_4                      : W25       : output : 2.5 V             :         : 5         : Y              
-hex_2_3                      : W26       : output : 2.5 V             :         : 5         : Y              
-hex_2_5                      : W27       : output : 2.5 V             :         : 5         : Y              
-hex_2_6                      : W28       : output : 2.5 V             :         : 5         : Y              
+hex_1[4]                     : W25       : output : 2.5 V             :         : 5         : Y              
+hex_2[3]                     : W26       : output : 2.5 V             :         : 5         : Y              
+hex_2[5]                     : W27       : output : 2.5 V             :         : 5         : Y              
+hex_2[6]                     : W28       : output : 2.5 V             :         : 5         : Y              
 GND+                         : Y1        :        :                   :         : 2         :                
-clk                          : Y2        : input  : 2.5 V             :         : 2         : Y              
+clk_50                       : Y2        : input  : 2.5 V             :         : 2         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y3        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y4        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y5        :        :                   :         : 2         :                
@@ -835,16 +836,16 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : Y12       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y13       :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y14       :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y15       :        :                   :         : 3         :                
-switch_0                     : Y16       : input  : 2.5 V             :         : 4         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y17       :        :                   :         : 4         :                
+switches[0]                  : Y16       : input  : 2.5 V             :         : 4         : Y              
+push_reset                   : Y17       : input  : 2.5 V             :         : 4         : Y              
 GND                          : Y18       : gnd    :                   :         :           :                
-hex_3_6                      : Y19       : output : 2.5 V             :         : 4         : Y              
+hex_3[6]                     : Y19       : output : 2.5 V             :         : 4         : Y              
 VCCD_PLL4                    : Y20       : power  :                   : 1.2V    :           :                
 VCCA4                        : Y21       : power  :                   : 2.5V    :           :                
-hex_1_1                      : Y22       : output : 2.5 V             :         : 5         : Y              
+hex_1[1]                     : Y22       : output : 2.5 V             :         : 5         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y23       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y24       :        :                   :         : 5         :                
-hex_2_2                      : Y25       : output : 2.5 V             :         : 5         : Y              
-hex_2_4                      : Y26       : output : 2.5 V             :         : 5         : Y              
+hex_2[2]                     : Y25       : output : 2.5 V             :         : 5         : Y              
+hex_2[4]                     : Y26       : output : 2.5 V             :         : 5         : Y              
 GND+                         : Y27       :        :                   :         : 5         :                
 GND+                         : Y28       :        :                   :         : 5         :                

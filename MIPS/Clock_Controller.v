@@ -1,67 +1,75 @@
-module Clock_Controller (input wire clk_50, input wire switch_hold, input wire push_manual_clock, input wire FLAG_input, input wire FPGA_input_confirm, input wire halt, output reg clock, output reg clock_status);
-	reg [26:0] counter = 0;
+module Clock_Controller #(
+	 parameter COUNTER_WIDTH = 18, // Approximately 1 second
+	 parameter DEBOUNCER_WIDTH = 16,
+	 parameter LCD_WIDTH
+)(
+	input switch_hold, push_confirm,
+	input clk, reset, 
+	input halt, lcd_done, interrupt,
+	input FLAG_input, FLAG_output, FLAG_lcd,
+	output reg clock, clock_status
+);
+
+	wire edge_confirm;
+
+	Debouncer #(
+		.N(DEBOUNCER_WIDTH)
+	) debouncer_io (
+		.clk(clk),
+		.push_in(push_confirm),
+		.falling_edge(edge_confirm)
+	);
 	
-	reg [15:0] debounce_counter = 0;
-	reg button_sync_A = 1;
-   reg button_sync_B = 1;
-   reg button_stable = 1;
-   reg button_prev = 1;
+	wire edge_LCD;
+
+	Debouncer #(
+		.N(LCD_WIDTH-2)
+	) debouncer_lcd (
+		.clk(clk),
+		.push_in(lcd_done),
+		.falling_edge(edge_LCD)
+	);
 	
-	wire button_falling_edge;
-	
+	reg [COUNTER_WIDTH-1:0] counter = 0;
+	reg [31:0] jumps = 0;
+
+	wire stop = halt 			||
+					switch_hold ||
+					FLAG_input 	||
+					FLAG_output ||
+					interrupt;
+					
 	initial begin
-		counter = 0;
+		clock = 0;
 		clock_status = 0;
 	end
-	
-	always @(posedge clk_50) begin
-        button_sync_A <= push_manual_clock;
-        button_sync_B <= button_sync_A;
-   end
-	 
-	always @(posedge clk_50) begin
-		if (button_sync_B != button_stable) begin
-			debounce_counter <= debounce_counter + 1;
-			
-			if (debounce_counter >= 50000) begin // ≈1 ms
-				button_stable <= button_sync_B;
-				debounce_counter <= 0;
-			end
-		end else begin
-			debounce_counter <= 0;
-		end
-   end
-	
-	assign button_falling_edge = (button_prev == 1 && button_stable == 0);
-	
-	always @(posedge clk_50) begin
-        button_prev <= button_stable;
-   end
 
-	always @(posedge clk_50) begin
-		if (halt) begin
-			clock_status <= 1;
+	always @(posedge clk or posedge reset) begin
+		if (reset) begin
+			clock <= 0;
+			clock_status <= 0;
+			counter <= 0;
+			jumps <= 2;
 		end else begin
-			if (FLAG_input && !FPGA_input_confirm) begin
+			if ((FLAG_lcd) && (!jumps)) begin
+				if (edge_LCD) begin
+					jumps <= 2;
+				end
+				clock_status <= 1;
+			end else if ((stop) && (!jumps)) begin
+				if (edge_confirm) begin
+					jumps <= 2;
+				end
 				clock_status <= 1;
 			end else begin
-				if (switch_hold == 1) begin
-					counter <= 0;
-					if (button_falling_edge) begin
-						 clock <= 1;
-						 clock_status <= 1;
-					end else begin
-						 clock <= 0;
-						 clock_status <= 0;
-					end
+				if (counter >= {COUNTER_WIDTH{1'b1}}) begin
+					 counter <= 0;
+					 clock <= ~clock;
+					 clock_status <= ~clock_status;
+					 if (jumps > 0)
+						jumps <= jumps - 1;
 				end else begin
-					if (counter >= 3000000 - 1) begin
-						 counter <= 0;
-						 clock <= ~clock;
-						 clock_status <= ~clock_status;
-					end else begin
-						 counter <= counter + 1;
-					end
+					 counter <= counter + 1'b1;
 				end
 			end
 		end

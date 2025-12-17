@@ -1,33 +1,19 @@
+# Clean ---------------------------------------------------------------
 # Quartus compilation output folders
 MIPS/db/
 MIPS/simulation/
 MIPS/incremental_db/
-MIPS/output_files/
+MIPS/greybox_tmp/
+MIPS/.qsys_edit/
 
-#   Allow important FPGA output files
-!MIPS/output_files/*.sof
-!MIPS/output_files/*.jdi
-!MIPS/output_files/*.pin
-
-# Also allow other generated programming files
-!MIPS/output_files/*.pof 
-!MIPS/output_files/*.jic 
-!MIPS/output_files/*.rbf 
-!MIPS/output_files/*.hex 
-!MIPS/output_files/*.mif 
-
-# If using Pin Planner or Timing Analyzer, allow constraints/scripts
-!MIPS/*.sdc               
-!MIPS/output_files/*.sdc  
-!MIPS/*.tcl               
-!MIPS/output_files/*.tcl  
-
-#   Compilation reports
+# Compilation reports
 MIPS/*.rpt
 MIPS/output_files/*.rpt
 MIPS/output_files/*.summary
 MIPS/output_files/*.smsg
 MIPS/output_files/*.done
+MIPS/output_files/*.jditmp
+MIPS/output_files/*.sld
 
 # Backup and temporary files
 MIPS/*.qar
@@ -43,13 +29,43 @@ MIPS/*_restored/
 MIPS/*.vcd                
 MIPS/*.wlf                
 MIPS/output_files/*.vcd   
-MIPS/output_files/*.wlf   
+MIPS/output_files/*.wlf 
 
 # Ignore Quartus and ModelSim workspace/lock files
-MIPS/*.qws                
+MIPS/*.qws              
 MIPS/*.qwf                
 MIPS/*.qdf                
 
 # Ignore standard log files
 MIPS/*.log                
-MIPS/output_files/*.log   
+MIPS/output_files/*.log
+
+# Maintain ------------------------------------------------------------
+# Allow important FPGA output files
+!MIPS/output_files/*.sof
+!MIPS/output_files/*.jdi
+!MIPS/output_files/*.pin
+
+# Ensure essential Quartus project/source files are NOT ignored
+!MIPS/*.v
+!MIPS/*.vhd
+!MIPS/*.qpf
+!MIPS/*.qsf
+!MIPS/*.qip
+
+# Allow Block Design Files (Schematic and Block Symbol Files)
+!MIPS/*.bdf
+!MIPS/*.bsf
+
+# Also allow other generated programming files
+!MIPS/output_files/*.pof 
+!MIPS/output_files/*.jic 
+!MIPS/output_files/*.rbf 
+!MIPS/output_files/*.hex 
+!MIPS/output_files/*.mif 
+
+# If using Pin Planner or Timing Analyzer, allow constraints/scripts
+!MIPS/*.sdc               
+!MIPS/output_files/*.sdc  
+!MIPS/*.tcl               
+!MIPS/output_files/*.tcl  
