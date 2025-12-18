@@ -1,7 +1,8 @@
 module MIPS_Verilog #(
 	parameter WORD_SIZE = 32,
 	parameter DEBOUNCER_WIDTH = 16,
-	parameter CLOCK_WIDTH = 9,
+	parameter CLOCK_WIDTH = 4,
+	parameter LCD_WIDTH = 11,
 	parameter STOPPER = 0				// For didatic reasons, stops the processor between switch context
 )(
 	input clk_50,
@@ -91,7 +92,7 @@ module MIPS_Verilog #(
 	Clock_Controller #(
 		.COUNTER_WIDTH(CLOCK_WIDTH),
 		.DEBOUNCER_WIDTH(DEBOUNCER_WIDTH),
-		.LCD_WIDTH(CLOCK_WIDTH+2)
+		.LCD_WIDTH(LCD_WIDTH)
 	) cc (
 		.clk(clk_50),
 		.reset(edge_reset),
@@ -306,7 +307,7 @@ module MIPS_Verilog #(
 	);
 	
 	LCD #(
-		.LCD_WIDTH(CLOCK_WIDTH+2)
+		.LCD_WIDTH(LCD_WIDTH)
 	) lcd_display (
 		.clk(clk_50),
 		.reset(edge_reset),

@@ -1,6 +1,6 @@
 module Instruction_Memory #(
 	parameter DATA_WIDTH = 32,
-	parameter ADDR_WIDTH = 11
+	parameter ADDR_WIDTH = 14
 )(
 	input clock, reset, interrupt,
 	input [DATA_WIDTH-1:0] PC,

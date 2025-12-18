@@ -1,7 +1,7 @@
 module Clock_Controller #(
 	 parameter COUNTER_WIDTH = 18, // Approximately 1 second
 	 parameter DEBOUNCER_WIDTH = 16,
-	 parameter LCD_WIDTH
+	 parameter LCD_WIDTH = 11
 )(
 	input switch_hold, push_confirm,
 	input clk, reset, 

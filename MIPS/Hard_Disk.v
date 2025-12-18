@@ -1,6 +1,6 @@
 module Hard_Disk #(
 	parameter DATA_WIDTH = 32,
-	parameter ADDR_WIDTH = 13
+	parameter ADDR_WIDTH = 14
 )(
 	input clock,
 	input [DATA_WIDTH-1:0] addr, data, 

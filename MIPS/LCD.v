@@ -1,5 +1,5 @@
 module LCD #(
-	 parameter LCD_WIDTH = 20
+	 parameter LCD_WIDTH = 11
 )(
 	input clk, reset,
 	
