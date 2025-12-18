@@ -2,7 +2,7 @@ module MIPS_Verilog #(
 	parameter WORD_SIZE = 32,
 	parameter DEBOUNCER_WIDTH = 16,
 	parameter CLOCK_WIDTH = 4,
-	parameter LCD_WIDTH = 11,
+	parameter LCD_WIDTH = 12,
 	parameter STOPPER = 0				// For didatic reasons, stops the processor between switch context
 )(
 	input clk_50,
