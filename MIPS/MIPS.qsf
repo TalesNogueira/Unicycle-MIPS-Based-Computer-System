@@ -153,33 +153,6 @@ set_location_assignment PIN_K1 -to lcd_DATA[4]
 set_location_assignment PIN_K2 -to lcd_DATA[5]
 set_location_assignment PIN_M3 -to lcd_DATA[6]
 set_location_assignment PIN_M5 -to lcd_DATA[7]
-set_global_assignment -name VERILOG_FILE MIPS_Verilog.v
-set_global_assignment -name VERILOG_FILE Clock_Controller.v
-set_global_assignment -name VERILOG_FILE PC.v
-set_global_assignment -name VERILOG_FILE BIOS.v
-set_global_assignment -name VERILOG_FILE Timer.v
-set_global_assignment -name VERILOG_FILE Instruction_Memory.v
-set_global_assignment -name VERILOG_FILE Register_Database.v
-set_global_assignment -name VERILOG_FILE Data_Memory.v
-set_global_assignment -name VERILOG_FILE Hard_Disk.v
-set_global_assignment -name VERILOG_FILE ULA.v
-set_global_assignment -name VERILOG_FILE UC.v
-set_global_assignment -name VERILOG_FILE IO.v
-set_global_assignment -name VERILOG_FILE LCD.v
-set_global_assignment -name VERILOG_FILE Seven_Segments_Display.v
-set_global_assignment -name VERILOG_FILE Sign_Extender_16to32.v
-set_global_assignment -name VERILOG_FILE Zero_Extender_26to32.v
-set_global_assignment -name VERILOG_FILE DoubleDabble32.v
-set_global_assignment -name VERILOG_FILE Clock_Divisor.v
-set_global_assignment -name VERILOG_FILE Debouncer.v
-set_global_assignment -name VERILOG_FILE MUX_Address_Write.v
-set_global_assignment -name VERILOG_FILE MUX_Data_Write.v
-set_global_assignment -name VERILOG_FILE MUX_Data_ULA.v
-set_global_assignment -name VERILOG_FILE MUX_Next_PC.v
-set_global_assignment -name VERILOG_FILE MUX_BIOSIM.v
-set_global_assignment -name TEXT_FILE biosfirmware.txt
-set_global_assignment -name TEXT_FILE localdisk.txt
-set_global_assignment -name SOURCE_FILE MIPS.qsf
 set_location_assignment PIN_H16 -to led_interrupt
 set_instance_assignment -name IO_STANDARD "2.5 V" -to switches[0]
 set_instance_assignment -name IO_STANDARD "2.5 V" -to switches[1]
@@ -275,4 +248,34 @@ set_instance_assignment -name IO_STANDARD "2.5 V" -to hex_0[3]
 set_instance_assignment -name IO_STANDARD "2.5 V" -to hex_0[4]
 set_instance_assignment -name IO_STANDARD "2.5 V" -to hex_0[5]
 set_instance_assignment -name IO_STANDARD "2.5 V" -to hex_0[6]
+set_global_assignment -name VERILOG_FILE MIPS_Verilog.v
+set_global_assignment -name VERILOG_FILE Clock_Controller.v
+set_global_assignment -name VERILOG_FILE PC.v
+set_global_assignment -name VERILOG_FILE BIOS.v
+set_global_assignment -name VERILOG_FILE Timer.v
+set_global_assignment -name VERILOG_FILE Instruction_Memory.v
+set_global_assignment -name VERILOG_FILE Register_Database.v
+set_global_assignment -name VERILOG_FILE Data_Memory.v
+set_global_assignment -name VERILOG_FILE Hard_Disk.v
+set_global_assignment -name VERILOG_FILE ULA.v
+set_global_assignment -name VERILOG_FILE UC.v
+set_global_assignment -name VERILOG_FILE IO.v
+set_global_assignment -name VERILOG_FILE UART_RX.v
+set_global_assignment -name VERILOG_FILE LCD.v
+set_global_assignment -name VERILOG_FILE Seven_Segments_Display.v
+set_global_assignment -name VERILOG_FILE Sign_Extender_16to32.v
+set_global_assignment -name VERILOG_FILE Zero_Extender_26to32.v
+set_global_assignment -name VERILOG_FILE DoubleDabble32.v
+set_global_assignment -name VERILOG_FILE Clock_Divisor.v
+set_global_assignment -name VERILOG_FILE Debouncer.v
+set_global_assignment -name VERILOG_FILE MUX_Address_Write.v
+set_global_assignment -name VERILOG_FILE MUX_Data_Write.v
+set_global_assignment -name VERILOG_FILE MUX_Data_ULA.v
+set_global_assignment -name VERILOG_FILE MUX_Next_PC.v
+set_global_assignment -name VERILOG_FILE MUX_BIOSIM.v
+set_global_assignment -name TEXT_FILE biosfirmware.txt
+set_global_assignment -name TEXT_FILE localdisk.txt
+set_global_assignment -name SOURCE_FILE MIPS.qsf
+set_location_assignment PIN_AC15 -to UART_tx
+set_instance_assignment -name IO_STANDARD "2.5 V" -to UART_tx
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

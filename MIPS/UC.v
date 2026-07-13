@@ -18,7 +18,7 @@ module UC (
 	output reg FLAG_start,
 	output reg FLAG_IMoffset,
 	output reg FLAG_DMoffset,
-	output reg FLAG_input, FLAG_output,
+	output reg FLAG_inputPeek, FLAG_input, FLAG_output,
 	output reg FLAG_lcd,
 	output reg FLAG_timer,
 	output reg halt,
@@ -51,45 +51,49 @@ module UC (
 										2: PC_current
 										3: input
 										4: data_HD
+										5: data_UART
 									*/
 		
 		// FLAG'S --------------------------------------------------------------------------------------------
-		FLAG_biosim = 0;		/*	FLAG_biosim
-										1: Change from BIOS to IM, and viceversa
-									*/
-		FLAG_hd = 0;			/*	FLAG_hd
-										1: Write into HD
-									*/
-		FLAG_instr = 0;		/*	FLAG_instr
-										1: Write into Instruction Memory
-									*/
-		FLAG_memory = 0;		/*	FLAG_memory
-										1: Write into Data Memory
-									*/
-		FLAG_register = 0;	/*	FLAG_register
-										1: Write into Register DB
-									*/
-		FLAG_start = 0;		/*	FLAG_start
-										1: Reset offset registers values ($gp, $sp, $fp)
-									*/
-		FLAG_IMoffset   = 0;	/*	FLAG_IMoffset
-										1: Write into IM_OFFSET <- R[rt]
-									*/
-		FLAG_DMoffset   = 0;	/*	FLAG_DMoffset
-										1: Write into DM_OFFSET <- R[rt]
-									*/
-		FLAG_input = 0;		/*	FLAG_input
-										1: Get input and send it to R[rd]
-									*/
-		FLAG_output = 0;		/*	FLAG_output
-										1: Get output from R[rs] and send it to 7 Segments Display
-									*/
-		FLAG_lcd = 0;			/*	FLAG_lcd
-										1: Get data from R[rs]/R[rt] send it to LCD Display
-									*/
-		FLAG_timer = 0;		/*	FLAG_timer
-										1: Get data from R[rs] and set Timer (RoundRobin)
-									*/
+		FLAG_biosim = 0;			/*	FLAG_biosim
+											1: Change from BIOS to IM, and viceversa
+										*/
+		FLAG_hd = 0;				/*	FLAG_hd
+											1: Write into HD
+										*/
+		FLAG_instr = 0;			/*	FLAG_instr
+											1: Write into Instruction Memory
+										*/
+		FLAG_memory = 0;			/*	FLAG_memory
+											1: Write into Data Memory
+										*/
+		FLAG_register = 0;		/*	FLAG_register
+											1: Write into Register DB
+										*/
+		FLAG_start = 0;			/*	FLAG_start
+											1: Reset offset registers values ($gp, $sp, $fp)
+											*/
+		FLAG_IMoffset   = 0;		/*	FLAG_IMoffset
+											1: Write into IM_OFFSET <- R[rt]
+										*/
+		FLAG_DMoffset   = 0;		/*	FLAG_DMoffset
+											1: Write into DM_OFFSET <- R[rt]
+										*/
+		FLAG_inputPeek = 0; /*	FLAG_inputPeek
+											1: Get input and send it to R[rd] whitout engaging confirm button
+										*/
+		FLAG_input = 0;			/*	FLAG_input
+											1: Get input and send it to R[rd]
+										*/
+		FLAG_output = 0;			/*	FLAG_output
+											1: Get output from R[rs] and send it to 7 Segments Display
+										*/
+		FLAG_lcd = 0;				/*	FLAG_lcd
+											1: Get data from R[rs]/R[rt] send it to LCD Display
+										*/
+		FLAG_timer = 0;			/*	FLAG_timer
+											1: Get data from R[rs] and set Timer (RoundRobin)
+										*/
 		halt = 0;
 		finish = 0;
 	end
@@ -105,6 +109,7 @@ module UC (
 		FLAG_start = 0;
 		FLAG_IMoffset = 0;
 		FLAG_DMoffset = 0;
+		FLAG_inputPeek = 0;
 		FLAG_input = 0;
 		FLAG_output = 0;
 		FLAG_lcd = 0;
@@ -127,7 +132,16 @@ module UC (
 			// R-Type --------------------------------------------------------------------------------------------
 			6'b000000:
 				case(instruction[5:0])
-				// in		[ R[rd] - input ]
+				// peek	[ R[rd] <- input (NO CONFIRM) ]
+				6'b000000:	
+					begin
+						FLAG_register = 1;			//	1: Write into Register DB
+						MUX_write = 3'd3;				//	3: input
+						
+						FLAG_inputPeek = 1;		// 1: Get input and send it to R[rd] whitout engaging confirm button
+					end
+					
+				// in		[ R[rd] <- input ]
 				6'b000001:
 					begin
 						FLAG_register = 1;		//	1: Write into Register DB
@@ -289,6 +303,15 @@ module UC (
 				6'b011001:	
 					begin
 						FLAG_timer = 1;
+					end
+				
+
+					
+				// UART	[ R[rd] <- UART_RX(TX2) ]
+				6'b011111:	
+					begin
+						FLAG_register = 1;		//	1: Write into Register DB
+						MUX_write = 3'd5;			//	5: UART
 					end
 				
 				// jr [ PC <- R[rs] ]

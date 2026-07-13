@@ -7,6 +7,8 @@ module MIPS_Verilog #(
 )(
 	input clk_50,
 	
+	input UART_tx,
+	
 	input switch_hold,
 	input [15:0] switches,
 	
@@ -51,7 +53,7 @@ module MIPS_Verilog #(
 	wire mux_ula;
 	wire [1:0] mux_register;
 	wire [2:0] mux_pc, mux_write;
-	wire flag_zero, flag_biosim, flag_hd, flag_instr, flag_memory, flag_register, flag_start, flag_IMoffset, flag_DMoffset, flag_input, flag_output, flag_lcd,  flag_timer, blank, halt, finish;
+	wire flag_zero, flag_biosim, flag_hd, flag_instr, flag_memory, flag_register, flag_start, flag_IMoffset, flag_DMoffset, flag_inputpeek, flag_input, flag_output, flag_lcd,  flag_timer, blank, halt, finish;
 
 	wire [WORD_SIZE-1:0] r_src, r_tgt,	imediate, address, r_tgtImd, r_so;
 	wire [WORD_SIZE-1:0] data_ula, data_memory, data_hd;
@@ -64,8 +66,10 @@ module MIPS_Verilog #(
 	wire [WORD_SIZE-1:0] io_input, io_output;
 	wire io_confirm, negative;
 	
-	wire lcd;
+	wire [WORD_SIZE-1:0] data_UART;   // Frequencia de 32 bits vinda do ESP32
 	
+	wire lcd;
+
 	wire interrupt, stop;
 
 // Assigns
@@ -177,6 +181,7 @@ module MIPS_Verilog #(
 		.FLAG_start(flag_start),
 		.FLAG_IMoffset(flag_IMoffset),
 		.FLAG_DMoffset(flag_DMoffset),
+		.FLAG_inputPeek(flag_inputpeek),
 		.FLAG_input(flag_input),
 		.FLAG_output(flag_output),
 		.FLAG_lcd(flag_lcd),
@@ -274,6 +279,7 @@ module MIPS_Verilog #(
 		.data_MEM(data_memory),
 		.data_IO(io_input),
 		.data_HD(data_hd),
+		.data_UART(data_UART),
 		.PC_current(pc_current),
 		.MUX_write(mux_write),
 		.data_write(regdb_data_write)
@@ -283,13 +289,25 @@ module MIPS_Verilog #(
 		.switches(switches),
 		.data_src(r_src),
 		.clk(clk_50),
+		.FLAG_inputPeek(flag_inputpeek),
 		.FLAG_input(flag_input),
 		.FLAG_output(flag_output),
 		.IO_input(io_input),
 		.IO_output(io_output),
 		.negative(negative)
 	);
-	
+
+	// ===================== TUNER: receptor UART (inicio) =====================
+	//  Escuta o pino UART_tx (ESP32) e monta a frequencia em data_UART.
+	//  Fica so "escutando" de lado: nao altera o comportamento atual do MIPS.
+	UART_RX uart_rx (
+		.clk(clk_50),
+		.reset(edge_reset),
+		.rx(UART_tx),
+		.data_UART(data_UART)
+	);
+	// ====================== TUNER: receptor UART (fim) =======================
+
 	Seven_Segments_Display s7_display (
 		.IO_output(io_output),
 		.negative(negative),

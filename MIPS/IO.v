@@ -3,7 +3,7 @@ module IO (
 	input [31:0] data_src,
 	
 	input clk,
-	input FLAG_input,
+	input FLAG_inputPeek, FLAG_input,
 	input FLAG_output,
 	
 	output reg signed [31:0] IO_input,
@@ -19,7 +19,7 @@ module IO (
 	);
 
 	always @(posedge clk) begin
-		if (FLAG_input) begin
+		if (FLAG_inputPeek || FLAG_input) begin
 			IO_input <= extended_switches;
 			IO_output <= switches[15] ? (~extended_switches + 1'b1) : extended_switches;
 			negative <= switches[15];
